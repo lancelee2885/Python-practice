@@ -21,3 +21,17 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+
+    # ltrs = list(phrase.lower().replace(" ", ""))
+    # ltrs_reverse = ltrs.copy()
+    # ltrs_reverse.reverse()
+    # if ltrs_reverse == ltrs:
+    #     return True
+    # else:
+    #     return False
+
+    # slice a list will hand you a new list of items sliced
+    # reverse doesn't return a new list
+
+    ltrs = phrase.lower().replace(" ", "")
+    return ltrs == ltrs[::-1]
