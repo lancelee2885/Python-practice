@@ -14,10 +14,42 @@ def sum_pairs(nums, goal):
     (4, 3) sum to 7, and finish before (5, 2):
 
         >>> sum_pairs([5, 1, 4, 8, 3, 2], 7)
-        (4, 3)
+        (4, 3)         0  1  2  3  4  5
 
     No pairs sum to 100, so return empty tuple:
 
         >>> sum_pairs([11, 20, 4, 2, 1, 5], 100)
         ()
     """
+
+    # left = 0
+    # right = 1
+
+    # while left < len(nums):
+    #     if (nums[left] + nums[right]) != goal:
+    #         while right < len(nums):
+    #             if nums[left] + nums[right] != goal:
+    #                 right += 1
+    #         left += 1
+    #         right = left + 1
+    #     break
+
+    # return (nums[left], nums[right])
+
+    # left = 0
+    # while left < len(nums):
+    #     right = left + 1
+    #     while right < len(nums):
+    #         if nums[left] + nums[right] == goal:
+    #             return (nums[left], nums[right])
+    #         right += 1
+    #     left += 1
+    # return ()
+
+    counted = set()
+    for num in nums:
+        if (goal - num) in counted:
+            return ((goal-num), num,)
+        else:
+            counted.add(num)
+    return tuple()
