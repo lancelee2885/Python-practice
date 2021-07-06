@@ -4,3 +4,11 @@ def compact(lst):
         >>> compact([0, 1, 2, '', [], False, (), None, 'All done'])
         [1, 2, 'All done']
     """
+    copy = []
+    for ele in lst:
+        if ele:
+            copy.append(ele)
+    return copy
+
+    #TODO:
+    #use list comprehension

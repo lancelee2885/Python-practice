@@ -1,3 +1,6 @@
+import builtins
+
+
 def calculate(operation, a, b, make_int=False, message='The result is'):
     """Perform operation on a + b, ()possibly truncating) & returning w/msg.
 
@@ -26,3 +29,26 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3) is None
         True
     """
+    # we can do if make_int and if not make_int
+    
+    if operation == "add":
+        if make_int:
+            return (f"{message} {int(a+b)}")
+        else:
+            return (f"{message} {a+b}")
+    if operation == "subtract":
+        if make_int:
+            return (f"{message} {int(a-b)}")
+        else:
+            return (f"{message} {a-b}")
+    if operation == "multiply":
+        if make_int:
+            return (f"{message} {int(a*b)}")
+        else:
+            return (f"{message} {a*b}")
+    if operation == "divide":
+        if make_int:
+            return (f"{message} {a//b}")
+        else:
+            return (f"{message} {a/b}")
+    
